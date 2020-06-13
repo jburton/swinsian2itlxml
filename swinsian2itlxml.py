@@ -171,7 +171,7 @@ def generate_xml(swinsian_db, itunes_xml, itunes_music_folder):
             kind = ""
             size = row["filesize"]
             # total_time = int(round(row["length"] * 1000, 10))
-            total_time = int(math.ceil(row["length"] * 1000))
+            total_time = int(math.ceil(int(row["length"] or 0)* 1000))
             track_number = row["tracknumber"]
             year = row["year"]  # for some reason Serato isn't picking this up
             bpm = row["bpm"]
